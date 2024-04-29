@@ -73,7 +73,7 @@ deployment:
     sizeLimit: 1Gi
 # Override namepsace for Kong chart resources. By default, the chart creates resources in the release namespace.
 # This may not be desirable when using this chart as a dependency.
-# namespace: "example"
+namespace: "madaurus"
 
 # -----------------------------------------------------------------------------
 # Kong parameters
@@ -540,11 +540,11 @@ ingressController:
   args: []
 
   gatewayDiscovery:
-    enabled: false
+    enabled: true
     generateAdminApiService: false
     adminApiService:
-      namespace: ""
-      name: ""
+      namespace: "madaurus"
+      name: "madaurus-gateway"
 
   # Specify individual namespaces to watch for ingress configuration. By default,
   # when no namespaces are set, the controller watches all namespaces and uses a
