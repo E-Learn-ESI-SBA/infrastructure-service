@@ -2,7 +2,7 @@ apiVersion: kafka.strimzi.io/v1beta2
 kind: KafkaUser
 metadata:
   name: kafka-user
-  namespace: kafka
+  namespace: madaurus
   labels:
     strimzi.io/cluster: kafka-cluster
 spec:
@@ -13,7 +13,7 @@ spec:
     acls:
       - resource:
           type: topic
-          name: NOTIFICATIONS
+          name: update-user-topic
           patternType: literal
         operations:
           - Describe
@@ -26,11 +26,13 @@ spec:
           patternType: literal
         operations:
           - Read
+          - Write
+          - Describe 
         host: "*"
       # Example Producer Acls for topic madaurus-topic
       - resource:
           type: topic
-          name: madaurus-topic
+          name: notification-topic
           patternType: literal
         operations:
           - Create
