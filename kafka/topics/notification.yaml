@@ -1,5 +1,5 @@
 apiVersion: kafka.strimzi.io/v1beta2
-kind: kafkaTopic
+kind: KafkaTopic
 metadata:
   name: notification
   labels:
