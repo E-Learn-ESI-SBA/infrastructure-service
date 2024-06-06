@@ -1,0 +1,12 @@
+apiVersion: kafka.strimzi.io/v1beta2
+kind: kafkaTopic
+metadata:
+  name: evaluation
+  labels:
+    strimzi.io/cluster: kafka-cluster
+spec: 
+  partitions: 2
+  replicas: 2
+  config:
+    retention.ms: 1800000
+    segment.bytes: 62914560    

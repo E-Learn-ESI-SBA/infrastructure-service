@@ -29,7 +29,6 @@ spec:
           - Write
           - Describe 
         host: "*"
-      # Example Producer Acls for topic madaurus-topic
       - resource:
           type: topic
           name: notification-topic
