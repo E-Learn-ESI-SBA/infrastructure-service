@@ -2,6 +2,8 @@ apiVersion: kafka.strimzi.io/v1beta2
 kind: kafkaTopic
 metadata:
   name: evaluation
+  namespace: madaurus
+
   labels:
     strimzi.io/cluster: kafka-cluster
 spec: 

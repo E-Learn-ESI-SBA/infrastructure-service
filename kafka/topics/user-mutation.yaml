@@ -2,6 +2,8 @@ apiVersion: kafka.strimzi.io/v1beta2
 kind: kafkaTopic
 metadata:
   name: user-mutation
+  namespace: madaurus
+
   labels:
     strimzi.io/cluster: kafka-cluster
 spec: 
