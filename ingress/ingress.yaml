@@ -6,6 +6,7 @@ spec:
   ingressClassName: kong
   rules:
    - http:
+      paths:
       - path: /material
         pathType: ImplementationSpecific
         backend:
