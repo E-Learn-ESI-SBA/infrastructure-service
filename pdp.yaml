@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pdp-madaurus-deployment
+  namespace: madaurus
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pdp-madaurus
+  template:
+    metadata:
+      labels:
+        app: transport-service
+    spec:
+      containers:
+        - name: pdp-madaurus
+          image:  hmshub3.azurecr.io/transport-service:latest
+          ports:
+            - containerPort: 7000
+          env:
+            - name: CLIENT_TOKEN
+              value: "permit_key_dyl2zhOIm2EXssDKP33JGbqGKKPiZarQjl0AcL7ZYvsYsLz2zFGDWcdRghccmR0EEJF5TS8c99g5ItDHl87alV"
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: pdp-madaurus
+  namespace: default
+spec:
+  selector:
+    app: pdp-madaurus
+  ports:
+    - protocol: TCP
+      port: 7000
+      targetPort: 7000
+  type: ClusterIP  
