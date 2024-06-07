@@ -5,46 +5,37 @@ metadata:
 spec:
   ingressClassName: kong
   rules:
-  - host: 0.0.0.0 
-    http:
-      paths:
-      - path: /hello
-        pathType: Prefix
-        backend:
-          service:
-            name: hello-world
-            port:
-              number: 80
+   - http:
       - path: /material
-        pathType: Prefix
+        pathType: ImplementationSpecific
         backend:
           service:
             name: material-madaurus
             port:
               number: 8080
       - path: /staff
-        pathType: Prefix
+        pathType: ImplementationSpecific
         backend:
           service:
             name: staff-madaurus
             port:
               number: 8080 
       - path: /communication
-        pathType: Prefix
+        pathType: ImplementationSpecific
         backend:
           service:
             name: communication-madaurus
             port:
               number: 8080 
       - path: /assignment
-        pathType: Prefix
+        pathType: ImplementationSpecific
         backend:
           service:
             name: assignments-madaurus
             port:
               number: 8080 
       - path: /notifications
-        pathType: Prefix
+        pathType: ImplementationSpecific
         backend:
           service:
             name: notification-madaurus
