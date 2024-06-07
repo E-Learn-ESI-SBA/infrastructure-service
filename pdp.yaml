@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: pdp-madaurus
-          image:  hmshub3.azurecr.io/transport-service:latest
+          image:  permitio/pdp
           ports:
             - containerPort: 7000
           env:
