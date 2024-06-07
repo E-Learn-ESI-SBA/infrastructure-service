@@ -11,7 +11,7 @@ spec:
   template:
     metadata:
       labels:
-        app: transport-service
+        app: pdp-madaurus
     spec:
       containers:
         - name: pdp-madaurus
